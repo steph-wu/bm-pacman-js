@@ -38,8 +38,6 @@ var clyde = {
 
 var ghosts = [inky, blinky, pinky, clyde]
 
-// replace this comment with your four ghosts setup as objects
-
 
 // Draw the screen functionality
 function drawScreen() {
@@ -80,6 +78,22 @@ function eatDot() {
   score += 10;
 }
 
+function eatGhost(ghosts) {
+  if (ghosts.edible == true) {
+    score += 200;
+  } else {
+    lives -= 1;
+    console.log('\nPac-Man was killed by ' + ghosts.name + ', a ' + ghosts.colour + ' ghost.')
+    checkLife();
+  }
+}
+
+function checkLife() {
+  if (lives == 0) {
+    process.exit();
+  }
+}
+
 
 // Process Player's Input
 function processInput(key) {
@@ -90,6 +104,18 @@ function processInput(key) {
       break;
     case 'd':
       eatDot();
+      break;
+    case '1':
+      eatGhost(ghosts[0]);
+        break;
+    case '2':
+      eatGhost(ghosts[1]);
+      break;
+    case '3':
+      eatGhost(ghosts[2]);
+      break;
+    case '4':
+      eatGhost(ghosts[3]);
       break;
     default:
       console.log('\nInvalid Command!');
