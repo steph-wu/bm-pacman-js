@@ -66,7 +66,7 @@ function displayMenu() {
   }
   console.log('(d) Eat Dot');
   for (var i = 0; i < ghosts.length; i++) {
-    console.log('(' + ghosts[i].menu_option + ') Eat ' + ghosts[i].name);
+    console.log('(' + ghosts[i].menu_option + ') Eat ' + ghosts[i].name + ' (Edible: ' + ghosts[i].edible + ')');
   };
   console.log('(q) Quit');
 }
