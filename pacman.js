@@ -86,7 +86,8 @@ function eatDot() {
 function eatGhost(ghosts) {
   if (ghosts.edible == true) {
     score += 200;
-    console.log('\nPac-Man ate ' + ghosts.name + '.')
+    ghosts.edible = false;
+    console.log('\nPac-Man ate ' + ghosts.name + '.');
   } else {
     lives -= 1;
     console.log('\nPac-Man was killed by ' + ghosts.name + ', a ' + ghosts.colour + ' ghost.')
