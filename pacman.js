@@ -28,13 +28,15 @@ var pinky = {
   edible: false
 };
 
-var inky = {
+var clyde = {
   menu_option: '4',
   name: 'Clyde',
   colour: 'Orange',
   character: 'Pokey',
   edible: false
 };
+
+var ghosts = [inky, blinky, pinky, clyde]
 
 // replace this comment with your four ghosts setup as objects
 
