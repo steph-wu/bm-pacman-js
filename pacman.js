@@ -61,7 +61,9 @@ function displayStats() {
 
 function displayMenu() {
   console.log('\n\nSelect Option:\n');  // each \n creates a new line
-  console.log('(p) Eat Power-Pellet')
+  if (powerPellets > 0) {
+    console.log('(p) Eat Power-Pellet')
+  }
   console.log('(d) Eat Dot');
   for (var i = 0; i < ghosts.length; i++) {
     console.log('(' + ghosts[i].menu_option + ') Eat ' + ghosts[i].name);
@@ -99,11 +101,15 @@ function checkLife() {
 }
 
 function eatPellet() {
-  console.log('\nChomp!');
-  powerPellets -= 1;
-  score += 50;
-  for (var i = 0; i < ghosts.length; i++) {
-    ghosts[i].edible = true;
+  if (powerPellets > 0) {
+    console.log('\nChomp!');
+    powerPellets -= 1;
+    score += 50;
+    for (var i = 0; i < ghosts.length; i++) {
+      ghosts[i].edible = true;
+    };
+  } else {
+    console.log('\nThere are no more power-pellets left!')
   };
 }
 
